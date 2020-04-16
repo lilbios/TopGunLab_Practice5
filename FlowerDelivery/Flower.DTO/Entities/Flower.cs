@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FlowerDelivery.DTO.Entities
 {
-    public class Flower
+    public class Flower:Entity
     {
     }
 }

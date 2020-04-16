@@ -8,5 +8,6 @@ namespace FlowerDelivery.DTO.Entities
 {
     public class Supply
     {
+        public Guid Id { get; set; }
     }
 }
