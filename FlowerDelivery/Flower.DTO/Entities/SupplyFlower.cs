@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Flower.DTO.Entities;
+using System;
 
 namespace FlowerDelivery.DTO.Entities
 {
-     public  class SupplyFlower
+     public  class SupplyFlower:IntermediateEntity
     {
+        public Guid SupplyId { get; set; }
+        public Guid FlowerId { get; set; }
+
+        public Supply Supply { get; set; }
+        public Flower Flower { get; set; }
     }
 }

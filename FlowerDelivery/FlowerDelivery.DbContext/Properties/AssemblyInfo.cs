@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FlowerDelivery.DbContext")]
+[assembly: AssemblyTitle("FlowerDelivery.DBContext")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("FlowerDelivery.DbContext")]
+[assembly: AssemblyProduct("FlowerDelivery.DBContext")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2d3ebe8a-919c-44dd-a61c-ae2918c4a1a5")]
+[assembly: Guid("c0770f08-d88e-4f16-bbae-2f0d75c95018")]
 
 // Version information for an assembly consists of the following four values:
 //

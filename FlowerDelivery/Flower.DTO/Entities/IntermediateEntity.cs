@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlowerDelivery.DbContext
+namespace Flower.DTO.Entities
 {
-    public class FlowelerDeliveryDbContext
+    public abstract class IntermediateEntity
     {
+        public int Amount { get; set; }
     }
 }
