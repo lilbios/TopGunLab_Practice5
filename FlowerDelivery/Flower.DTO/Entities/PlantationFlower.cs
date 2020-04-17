@@ -1,5 +1,4 @@
-﻿using Flower.DTO.Entities;
-using System;
+﻿using System;
 
 namespace FlowerDelivery.DTO.Entities
 {
