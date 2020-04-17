@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowerDelivery.BLL", "Flowe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowerDelivery.DTO", "Flower.DTO\FlowerDelivery.DTO.csproj", "{54EE0821-0233-4252-9C1F-2AE46A2024EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowerDelivery.DBContext", "FlowerDelivery.DBContext\FlowerDelivery.DBContext.csproj", "{C0770F08-D88E-4F16-BBAE-2F0D75C95018}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowerDelivery.Contex", "FlowerDelivery.Contex\FlowerDelivery.Contex.csproj", "{F63F40A3-DCB6-42D1-B059-F0CC873C7817}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{54EE0821-0233-4252-9C1F-2AE46A2024EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54EE0821-0233-4252-9C1F-2AE46A2024EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54EE0821-0233-4252-9C1F-2AE46A2024EE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C0770F08-D88E-4F16-BBAE-2F0D75C95018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0770F08-D88E-4F16-BBAE-2F0D75C95018}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0770F08-D88E-4F16-BBAE-2F0D75C95018}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0770F08-D88E-4F16-BBAE-2F0D75C95018}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F63F40A3-DCB6-42D1-B059-F0CC873C7817}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F63F40A3-DCB6-42D1-B059-F0CC873C7817}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F63F40A3-DCB6-42D1-B059-F0CC873C7817}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F63F40A3-DCB6-42D1-B059-F0CC873C7817}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

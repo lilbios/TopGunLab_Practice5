@@ -47,7 +47,7 @@
     <Compile Include="Entities\IntermediateEntity.cs" />
     <Compile Include="Entities\Plantation.cs" />
     <Compile Include="Entities\PlantationFlower.cs" />
-    <Compile Include="Entities\State.cs" />
+    <Compile Include="Entities\Status.cs" />
     <Compile Include="Entities\Supply.cs" />
     <Compile Include="Entities\SupplyFlower.cs" />
     <Compile Include="Entities\Warehouse.cs" />

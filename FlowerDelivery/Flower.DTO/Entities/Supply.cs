@@ -1,5 +1,4 @@
-﻿using Flower.DTO.Entities;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -22,8 +21,8 @@ namespace FlowerDelivery.DTO.Entities
         public DateTime ClosedDate { get; set; }
 
         
-        [DefaultValue(State.InProgress)]
-        public State State { get; set; }
+        [DefaultValue(Status.InPogress)]
+        public Status Status { get; set; }
 
         public Guid PlantationId { get; set; }
         public Guid Warehouser { get; set; }
