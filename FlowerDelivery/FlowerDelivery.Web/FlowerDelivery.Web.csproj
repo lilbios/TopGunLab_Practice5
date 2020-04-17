@@ -194,6 +194,16 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Flower.DTO\FlowerDelivery.DTO.csproj">
+      <Project>{54ee0821-0233-4252-9c1f-2ae46a2024ee}</Project>
+      <Name>FlowerDelivery.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FlowerDelivery.Contex\FlowerDelivery.Contex.csproj">
+      <Project>{f63f40a3-dcb6-42d1-b059-f0cc873c7817}</Project>
+      <Name>FlowerDelivery.Contex</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

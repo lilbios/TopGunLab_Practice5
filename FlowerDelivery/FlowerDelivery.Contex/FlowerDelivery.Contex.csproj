@@ -59,6 +59,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FlowerDeliveryDbContext.cs" />
+    <Compile Include="Migrations\202004172200089_FlowerDeliveryMigration.cs" />
+    <Compile Include="Migrations\202004172200089_FlowerDeliveryMigration.designer.cs">
+      <DependentUpon>202004172200089_FlowerDeliveryMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -71,6 +75,11 @@
       <Project>{54EE0821-0233-4252-9C1F-2AE46A2024EE}</Project>
       <Name>FlowerDelivery.DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202004172200089_FlowerDeliveryMigration.resx">
+      <DependentUpon>202004172200089_FlowerDeliveryMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

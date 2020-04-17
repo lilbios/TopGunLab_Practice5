@@ -41,11 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataManager.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IRepositoryFlower.cs" />
+    <Compile Include="Interfaces\IRepositoryPlantation.cs" />
+    <Compile Include="Interfaces\IRepositoryPlantationFlower.cs" />
+    <Compile Include="Interfaces\IRepositorySupply.cs" />
+    <Compile Include="Interfaces\IRepositorySupplyFlower.cs" />
+    <Compile Include="Interfaces\IRepositoryWarehouse.cs" />
+    <Compile Include="Interfaces\IRepositoryWarehouseFlower.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Implementations\" />
-    <Folder Include="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Flower.DTO\FlowerDelivery.DTO.csproj">
+      <Project>{54ee0821-0233-4252-9c1f-2ae46a2024ee}</Project>
+      <Name>FlowerDelivery.DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
