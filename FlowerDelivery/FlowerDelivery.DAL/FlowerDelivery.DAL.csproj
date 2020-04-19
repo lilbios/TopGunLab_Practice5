@@ -42,6 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataManager.cs" />
+    <Compile Include="Implementations\FlowerRepository.cs" />
+    <Compile Include="Implementations\PlantationFlowerRepository.cs" />
+    <Compile Include="Implementations\PlantationRepository.cs" />
+    <Compile Include="Implementations\SupplyFlowerRepository.cs" />
+    <Compile Include="Implementations\SupplyRepository.cs" />
+    <Compile Include="Implementations\WarehouseFlowerRepository.cs" />
+    <Compile Include="Implementations\WarehouseRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IRepositoryFlower.cs" />
     <Compile Include="Interfaces\IRepositoryPlantation.cs" />
@@ -52,9 +59,7 @@
     <Compile Include="Interfaces\IRepositoryWarehouseFlower.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Implementations\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Flower.DTO\FlowerDelivery.DTO.csproj">
       <Project>{54ee0821-0233-4252-9c1f-2ae46a2024ee}</Project>

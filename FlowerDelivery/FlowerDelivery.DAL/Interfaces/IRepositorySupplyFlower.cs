@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FlowerDelivery.DTO.Entities;
 
 namespace FlowerDelivery.DAL.Interfaces
 {
-    public class IRepositorySupplyFlower
+    public interface IRepositorySupplyFlower:IRepository<SupplyFlower>
     {
     }
 }

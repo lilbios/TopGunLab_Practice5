@@ -11,5 +11,8 @@ namespace FlowerDelivery.DTO.Entities
     {
         [Range(1,int.MaxValue,ErrorMessage ="Enter valid number")]
         public int Amount { get; set; }
+        [MinLength(11,ErrorMessage ="Write a bit more...")]
+        [MaxLength(21,ErrorMessage ="Give short information.Don't overload description")]
+        public string Info { get; set; }
     }
 }
