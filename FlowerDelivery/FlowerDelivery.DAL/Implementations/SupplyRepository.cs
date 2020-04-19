@@ -1,38 +1,52 @@
-﻿using FlowerDelivery.DAL.Interfaces;
+﻿using FlowerDelivery.Contex;
+using FlowerDelivery.DAL.Interfaces;
 using FlowerDelivery.DTO.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Data.Entity;
 using System.Threading.Tasks;
 
 namespace FlowerDelivery.DAL.Implementations
 {
     public class SupplyRepository : IRepositorySupply
     {
-        public Task Create(Supply value)
+
+        private readonly FlowerDeliveryDbContext dbcontext;
+        public SupplyRepository(FlowerDeliveryDbContext _context)
         {
-            throw new NotImplementedException();
+            dbcontext = _context;
+        }
+        public async Task Create(Supply value)
+        {
+            dbcontext.Supplies.Add(value);
+            await dbcontext.SaveChangesAsync();
         }
 
-        public Task<Supply> Get(int id)
+        public async Task<Supply> Get(params Guid[] identity)
         {
-            throw new NotImplementedException();
+            var supply = await dbcontext.Supplies.FirstOrDefaultAsync(s=> s.Id == identity[0]);
+            return supply;
         }
 
-        public Task<ICollection<Supply>> GetAll()
+        public async  Task<ICollection<Supply>> GetAll()
         {
-            throw new NotImplementedException();
+            var supplies = await dbcontext.Supplies.ToListAsync();
+            return supplies;
         }
 
-        public Task Remove(Supply value)
+        public async Task Remove(Supply value)
         {
-            throw new NotImplementedException();
+            if (value != null)
+            {
+                dbcontext.Entry(value).State = EntityState.Deleted;
+                await dbcontext.SaveChangesAsync();
+            }
         }
 
-        public Task Update(Supply value)
+        public async  Task Update(Supply value)
         {
-            throw new NotImplementedException();
+            dbcontext.Entry(value).State = EntityState.Modified;
+            await dbcontext.SaveChangesAsync();
         }
     }
 }

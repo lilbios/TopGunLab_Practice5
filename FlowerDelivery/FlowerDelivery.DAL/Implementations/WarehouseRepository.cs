@@ -1,36 +1,53 @@
-﻿using FlowerDelivery.DAL.Interfaces;
+﻿using FlowerDelivery.Contex;
+using FlowerDelivery.DAL.Interfaces;
 using FlowerDelivery.DTO.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace FlowerDelivery.DAL.Implementations
 {
     public class WarehouseRepository : IRepositoryWarehouse
     {
-        public Task Create(Warehouse value)
+
+        private readonly FlowerDeliveryDbContext dbcontext;
+        public WarehouseRepository(FlowerDeliveryDbContext _context)
         {
-            throw new NotImplementedException();
+            dbcontext = _context;
+        }
+        public async Task Create(Warehouse value)
+        {
+            dbcontext.Warehouses.Add(value);
+            await dbcontext.SaveChangesAsync();
         }
 
-        public Task<Warehouse> Get(int id)
+        public async Task<Warehouse> Get(params Guid[] identity)
         {
-            throw new NotImplementedException();
+            var warehouse = await dbcontext.Warehouses.FirstOrDefaultAsync(w => w.Id == identity[0]);
+            return warehouse;
         }
 
-        public Task<ICollection<Warehouse>> GetAll()
+        public async Task<ICollection<Warehouse>> GetAll()
         {
-            throw new NotImplementedException();
+            var warehouses = await dbcontext.Warehouses.ToListAsync();
+            return warehouses;
         }
 
-        public Task Remove(Warehouse value)
+        public async Task Remove(Warehouse value)
         {
-            throw new NotImplementedException();
+            if (value != null)
+            {
+                dbcontext.Entry(value).State = EntityState.Deleted;
+                await dbcontext.SaveChangesAsync();
+            }
         }
 
-        public Task Update(Warehouse value)
+        public async Task Update(Warehouse value)
         {
-            throw new NotImplementedException();
+            dbcontext.Entry(value).State = EntityState.Modified;
+            await dbcontext.SaveChangesAsync();
         }
     }
 }

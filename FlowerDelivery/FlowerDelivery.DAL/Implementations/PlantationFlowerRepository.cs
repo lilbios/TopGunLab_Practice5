@@ -1,38 +1,52 @@
-﻿using FlowerDelivery.DAL.Interfaces;
+﻿using FlowerDelivery.Contex;
+using FlowerDelivery.DAL.Interfaces;
 using FlowerDelivery.DTO.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Data.Entity;
 using System.Threading.Tasks;
 
 namespace FlowerDelivery.DAL.Implementations
 {
     public class PlantationFlowerRepository : IRepositoryPlantationFlower
     {
-        public Task Create(PlantationFlower value)
+        private readonly FlowerDeliveryDbContext dbcontext;
+        public PlantationFlowerRepository(FlowerDeliveryDbContext _context)
         {
-            throw new NotImplementedException();
+            dbcontext = _context;
+        }
+        public async Task Create(PlantationFlower value)
+        {
+            dbcontext.PlantationFlowers.Add(value);
+            await dbcontext.SaveChangesAsync();
         }
 
-        public Task<PlantationFlower> Get(int id)
+        public async Task<PlantationFlower> Get(params Guid[] identity)
         {
-            throw new NotImplementedException();
+            var plantationFlower = await dbcontext.PlantationFlowers
+                .FirstOrDefaultAsync(pf => pf.PlantationId == identity[0] && pf.PlantationId == identity[1]);
+            return plantationFlower;
         }
 
-        public Task<ICollection<PlantationFlower>> GetAll()
+        public async Task<ICollection<PlantationFlower>> GetAll()
         {
-            throw new NotImplementedException();
+            var plantationFlowers = await dbcontext.PlantationFlowers.ToListAsync();
+            return plantationFlowers;
         }
 
-        public Task Remove(PlantationFlower value)
+        public async Task Remove(PlantationFlower value)
         {
-            throw new NotImplementedException();
+            if (value != null)
+            {
+                dbcontext.Entry(value).State = EntityState.Deleted;
+                await dbcontext.SaveChangesAsync();
+            }
         }
 
-        public Task Update(PlantationFlower value)
+        public async Task Update(PlantationFlower value)
         {
-            throw new NotImplementedException();
+            dbcontext.Entry(value).State = EntityState.Modified;
+            await dbcontext.SaveChangesAsync();
         }
     }
 }

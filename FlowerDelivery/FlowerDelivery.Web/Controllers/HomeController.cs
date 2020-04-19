@@ -8,23 +8,28 @@ namespace FlowerDelivery.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        [HttpGet]
+        public ActionResult Flowers()
         {
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
+        [HttpGet]
+        public  ActionResult Supplies() {
             return View();
         }
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
+        [HttpGet]
+        public ActionResult Warehouses() {
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Plantations() {
+            return View();
+
+        }
+
+
     }
 }

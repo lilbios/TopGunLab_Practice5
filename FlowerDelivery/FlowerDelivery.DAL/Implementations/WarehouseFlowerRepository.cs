@@ -1,36 +1,54 @@
-﻿using FlowerDelivery.DAL.Interfaces;
+﻿using FlowerDelivery.Contex;
+using FlowerDelivery.DAL.Interfaces;
 using FlowerDelivery.DTO.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Threading.Tasks;
 
 namespace FlowerDelivery.DAL.Implementations
 {
-    public class WarehouseFlowerRepository : IRepositoryWarehouse
+    public class WarehouseFlowerRepository : IRepositoryWarehouseFlower
     {
-        public Task Create(Warehouse value)
+
+        private readonly FlowerDeliveryDbContext dbcontext;
+        public WarehouseFlowerRepository(FlowerDeliveryDbContext _context)
         {
-            throw new NotImplementedException();
+            dbcontext = _context;
+        }
+        public async  Task Create(WarehouseFlower value)
+        {
+            dbcontext.WarehouseFlowers.Add(value);
+            await dbcontext.SaveChangesAsync();
+
         }
 
-        public Task<Warehouse> Get(int id)
+        public async Task<WarehouseFlower> Get(params Guid[] identity)
         {
-            throw new NotImplementedException();
+            var warehouseFlowers = await dbcontext.WarehouseFlowers
+                .FirstOrDefaultAsync(wf => wf.WarehouseId == identity[0] && wf.FlowerId == identity[1]);
+            return warehouseFlowers;
         }
 
-        public Task<ICollection<Warehouse>> GetAll()
+        public async Task<ICollection<WarehouseFlower>> GetAll()
         {
-            throw new NotImplementedException();
+            var warehouseFlowers = await dbcontext.WarehouseFlowers.ToListAsync();
+            return warehouseFlowers;
         }
 
-        public Task Remove(Warehouse value)
+        public async Task Remove(WarehouseFlower  value)
         {
-            throw new NotImplementedException();
+            if (value != null)
+            {
+                dbcontext.Entry(value).State = EntityState.Deleted;
+                await dbcontext.SaveChangesAsync();
+            }
         }
 
-        public Task Update(Warehouse value)
+        public async Task Update(WarehouseFlower value)
         {
-            throw new NotImplementedException();
+            dbcontext.Entry(value).State = EntityState.Modified;
+            await dbcontext.SaveChangesAsync();
         }
     }
 }

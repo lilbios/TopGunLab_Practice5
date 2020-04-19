@@ -1,38 +1,54 @@
-﻿using FlowerDelivery.DAL.Interfaces;
+﻿using FlowerDelivery.Contex;
+using FlowerDelivery.DAL.Interfaces;
 using FlowerDelivery.DTO.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Data.Entity;
 using System.Threading.Tasks;
 
 namespace FlowerDelivery.DAL.Implementations
 {
-    public class SupplyFlowerRepository : IRepositoryFlower
+    public class SupplyFlowerRepository : IRepositorySupplyFlower
     {
-        public Task Create(Flower value)
+        private readonly FlowerDeliveryDbContext dbcontext;
+        public SupplyFlowerRepository(FlowerDeliveryDbContext _context)
         {
-            throw new NotImplementedException();
+            dbcontext = _context;
         }
 
-        public Task<Flower> Get(int id)
+        public async Task Create(SupplyFlower value)
         {
-            throw new NotImplementedException();
+            dbcontext.SupplyFlowers.Add(value);
+            await dbcontext.SaveChangesAsync();
         }
 
-        public Task<ICollection<Flower>> GetAll()
+        public async Task<SupplyFlower> Get(params Guid[] identity)
         {
-            throw new NotImplementedException();
+            var supplyFlower = await dbcontext.SupplyFlowers
+                .FirstOrDefaultAsync(sf=> sf.SupplyId == identity[0] && sf.SupplyId == identity[1]);
+            return supplyFlower;
         }
 
-        public Task Remove(Flower value)
+        public async Task<ICollection<SupplyFlower>> GetAll()
         {
-            throw new NotImplementedException();
+            var supplyFlowers = await dbcontext.SupplyFlowers.ToListAsync();
+            return  supplyFlowers;
+
         }
 
-        public Task Update(Flower value)
+        public async Task Remove(SupplyFlower value)
         {
-            throw new NotImplementedException();
+            if (value != null)
+            {
+                dbcontext.Entry(value).State = EntityState.Deleted;
+                await dbcontext.SaveChangesAsync();
+            }
+        }
+
+        public async Task Update(SupplyFlower value)
+        {
+            dbcontext.Entry(value).State = EntityState.Modified;
+            await dbcontext.SaveChangesAsync();
         }
     }
 }

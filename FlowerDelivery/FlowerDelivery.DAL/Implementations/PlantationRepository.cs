@@ -1,38 +1,52 @@
-﻿using FlowerDelivery.DAL.Interfaces;
+﻿using FlowerDelivery.Contex;
+using FlowerDelivery.DAL.Interfaces;
 using FlowerDelivery.DTO.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Data.Entity;
 using System.Threading.Tasks;
 
 namespace FlowerDelivery.DAL.Implementations
 {
     public class PlantationRepository : IRepositoryPlantation
     {
-        public Task Create(Plantation value)
+
+        private readonly FlowerDeliveryDbContext dbcontext;
+        public PlantationRepository(FlowerDeliveryDbContext _context)
         {
-            throw new NotImplementedException();
+            dbcontext = _context;
+        }
+        public async Task Create(Plantation value)
+        {
+            dbcontext.Plantations.Add(value);
+            await dbcontext.SaveChangesAsync();
         }
 
-        public Task<Plantation> Get(int id)
+        public async Task<Plantation> Get(params Guid[] identity)
         {
-            throw new NotImplementedException();
+            var plantation = await dbcontext.Plantations.FirstOrDefaultAsync(p => p.Id == identity[0]);
+            return plantation;
         }
 
-        public Task<ICollection<Plantation>> GetAll()
+        public async Task<ICollection<Plantation>> GetAll()
         {
-            throw new NotImplementedException();
+            var plantations = await dbcontext.Plantations.ToListAsync();
+            return plantations;
         }
 
-        public Task Remove(Plantation value)
+        public async Task Remove(Plantation value)
         {
-            throw new NotImplementedException();
+            if (value != null)
+            {
+                dbcontext.Entry(value).State = EntityState.Deleted;
+                await dbcontext.SaveChangesAsync();
+            }
         }
 
-        public Task Update(Plantation value)
+        public async Task Update(Plantation value)
         {
-            throw new NotImplementedException();
+            dbcontext.Entry(value).State = EntityState.Modified;
+            await dbcontext.SaveChangesAsync();
         }
     }
 }

@@ -1,38 +1,52 @@
-﻿using FlowerDelivery.DAL.Interfaces;
+﻿using FlowerDelivery.Contex;
+using FlowerDelivery.DAL.Interfaces;
 using FlowerDelivery.DTO.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Data.Entity;
 using System.Threading.Tasks;
 
 namespace FlowerDelivery.DAL.Implementations
 {
     public class FlowerRepository : IRepositoryFlower
     {
-        public Task Create(Flower value)
+        private readonly FlowerDeliveryDbContext dbcontext;
+        public FlowerRepository(FlowerDeliveryDbContext _context)
         {
-            throw new NotImplementedException();
+            dbcontext = _context;
+        }
+        public async Task Create(Flower value)
+        {
+            dbcontext.Flowers.Add(value);
+            await dbcontext.SaveChangesAsync();
         }
 
-        public Task<Flower> Get(int id)
+        public async Task<Flower> Get(params Guid[] identeficators)
         {
-            throw new NotImplementedException();
+            var flower = await dbcontext.Flowers.FirstOrDefaultAsync(f => f.Id == identeficators[0]);
+            return flower;
         }
 
-        public Task<ICollection<Flower>> GetAll()
+        public async Task<ICollection<Flower>> GetAll()
         {
-            throw new NotImplementedException();
+            var flowers = await dbcontext.Flowers.ToListAsync();
+            return flowers;
         }
 
-        public Task Remove(Flower value)
+        public async Task Remove(Flower value)
         {
-            throw new NotImplementedException();
+            if (value != null)
+            {
+                dbcontext.Entry(value).State = EntityState.Deleted;
+                await dbcontext.SaveChangesAsync();
+            }
         }
 
-        public Task Update(Flower value)
+        public async Task Update(Flower value)
         {
-            throw new NotImplementedException();
+            dbcontext.Entry(value).State = EntityState.Modified;
+            await dbcontext.SaveChangesAsync();
+
         }
     }
 }
