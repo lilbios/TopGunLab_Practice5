@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowerDelivery.DTO", "Flowe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowerDelivery.Contex", "FlowerDelivery.Contex\FlowerDelivery.Contex.csproj", "{F63F40A3-DCB6-42D1-B059-F0CC873C7817}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowerDelivery.SL", "FlowerDelivery.SL\FlowerDelivery.SL.csproj", "{A633221A-F79D-4550-BFE3-2B22C87E46C0}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{F63F40A3-DCB6-42D1-B059-F0CC873C7817}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F63F40A3-DCB6-42D1-B059-F0CC873C7817}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F63F40A3-DCB6-42D1-B059-F0CC873C7817}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A633221A-F79D-4550-BFE3-2B22C87E46C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A633221A-F79D-4550-BFE3-2B22C87E46C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A633221A-F79D-4550-BFE3-2B22C87E46C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A633221A-F79D-4550-BFE3-2B22C87E46C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

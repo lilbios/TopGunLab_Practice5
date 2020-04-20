@@ -180,11 +180,14 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Flowers\Index.cshtml" />
+    <Content Include="Views\Flowers\Details.cshtml" />
+    <Content Include="Views\Flowers\Create.cshtml" />
+    <Content Include="Views\Flowers\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Flowers\" />
     <Folder Include="Views\Home\" />
     <Folder Include="Views\PlantationsFlowers\" />
     <Folder Include="Views\Plantations\" />
@@ -218,10 +221,6 @@
     <ProjectReference Include="..\FlowerDelivery.DAL\FlowerDelivery.DAL.csproj">
       <Project>{A92BA7C1-1FB8-48A5-BBC5-FD0197415A1B}</Project>
       <Name>FlowerDelivery.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FlowerDelivery.SL\FlowerDelivery.SL.csproj">
-      <Project>{a633221a-f79d-4550-bfe3-2b22c87e46c0}</Project>
-      <Name>FlowerDelivery.SL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
