@@ -1,5 +1,5 @@
 ﻿using FlowerDelivery.DAL;
-using FlowerDelivery.SL;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +10,10 @@ namespace FlowerDelivery.Web.Controllers
 {
     public class WarehouseFlowersController : Controller
     {
-        private readonly ServiceManager serviceManager;
-        public WarehouseFlowersController(DataManager dataManager)
+        private readonly DataManager dataManager;
+        public WarehouseFlowersController(DataManager _dataManager)
         {
-            serviceManager = new ServiceManager(dataManager);
+            dataManager = _dataManager;
         }
         // GET: WarehouseFlowers
         public ActionResult Index()
