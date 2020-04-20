@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -25,9 +26,10 @@ namespace FlowerDelivery.DTO.Entities
         public Status Status { get; set; }
 
         public Guid PlantationId { get; set; }
-        public Guid Warehouser { get; set; }
+        public Guid WarehouseId { get; set; }
         public Plantation Plantation { get; set; }
         public Warehouse Warehouse { get; set; }
+        public ICollection<SupplyFlower> SupplyFlower { get; set; }
 
 
     }

@@ -13,7 +13,7 @@ namespace FlowerDelivery.Contex.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202004172200089_FlowerDeliveryMigration"; }
+            get { return "202004201145000_FlowerDeliveryMigration"; }
         }
         
         string IMigrationMetadata.Source

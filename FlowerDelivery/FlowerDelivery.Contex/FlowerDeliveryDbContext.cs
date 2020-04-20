@@ -1,6 +1,7 @@
 ﻿using FlowerDelivery.DTO.Entities;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -18,12 +19,8 @@ namespace FlowerDelivery.Contex
         public DbSet<WarehouseFlower> WarehouseFlowers { get; set; }
         public DbSet<PlantationFlower> PlantationFlowers { get; set; }
 
-
         public FlowerDeliveryDbContext()
-        {
-
-        }
-        public FlowerDeliveryDbContext(string connectionString):base(connectionString)
+            :base("Server = (localdb)\\mssqllocaldb; Database=flowerdeliverydb;Trusted_Connection=True;MultipleActiveResultSets=true")
         {
 
         }
