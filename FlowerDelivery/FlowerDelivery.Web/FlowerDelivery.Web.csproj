@@ -133,7 +133,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\FlowersController.cs" />
+    <Compile Include="Controllers\PlantationsController.cs" />
+    <Compile Include="Controllers\PlantationFlowersController.cs" />
+    <Compile Include="Controllers\SuppliesController.cs" />
+    <Compile Include="Controllers\SupplyFlowersController.cs" />
+    <Compile Include="Controllers\WarehouseFlowersController.cs" />
+    <Compile Include="Controllers\WarehousesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -178,7 +184,14 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Flowers\" />
     <Folder Include="Views\Home\" />
+    <Folder Include="Views\PlantationsFlowers\" />
+    <Folder Include="Views\Plantations\" />
+    <Folder Include="Views\Supplies\" />
+    <Folder Include="Views\SupplyFlowers\" />
+    <Folder Include="Views\WarehouseFlowers\" />
+    <Folder Include="Views\Warehouses\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -201,6 +214,14 @@
     <ProjectReference Include="..\FlowerDelivery.Contex\FlowerDelivery.Contex.csproj">
       <Project>{f63f40a3-dcb6-42d1-b059-f0cc873c7817}</Project>
       <Name>FlowerDelivery.Contex</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FlowerDelivery.DAL\FlowerDelivery.DAL.csproj">
+      <Project>{A92BA7C1-1FB8-48A5-BBC5-FD0197415A1B}</Project>
+      <Name>FlowerDelivery.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FlowerDelivery.SL\FlowerDelivery.SL.csproj">
+      <Project>{a633221a-f79d-4550-bfe3-2b22c87e46c0}</Project>
+      <Name>FlowerDelivery.SL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

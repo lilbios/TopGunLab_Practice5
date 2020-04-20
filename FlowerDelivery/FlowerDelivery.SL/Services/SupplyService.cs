@@ -12,7 +12,7 @@ namespace FlowerDelivery.SL.Services
         private DataManager dataManager;
         public SupplyService(DataManager _dataManager)
         {
-            dataManager = _dataManager;s
+            dataManager = _dataManager;
         }
     }
 }
