@@ -187,21 +187,39 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Flowers\Index.cshtml" />
-    <Content Include="Views\Flowers\Details.cshtml" />
-    <Content Include="Views\Flowers\Create.cshtml" />
+    <Content Include="Views\Flowers\Info.cshtml" />
     <Content Include="Views\Flowers\Edit.cshtml" />
+    <Content Include="Views\Flowers\Index.cshtml" />
+    <Content Include="Views\Flowers\Create.cshtml" />
+    <Content Include="Views\Plantations\Index.cshtml" />
+    <Content Include="Views\Plantations\Info.cshtml" />
+    <Content Include="Views\Plantations\Create.cshtml" />
+    <Content Include="Views\Plantations\Edit.cshtml" />
+    <Content Include="Views\PlantationFlowers\Index.cshtml" />
+    <Content Include="Views\PlantationFlowers\Info.cshtml" />
+    <Content Include="Views\PlantationFlowers\Create.cshtml" />
+    <Content Include="Views\PlantationFlowers\Edit.cshtml" />
+    <Content Include="Views\Supplies\Index.cshtml" />
+    <Content Include="Views\Supplies\Info.cshtml" />
+    <Content Include="Views\Supplies\Create.cshtml" />
+    <Content Include="Views\Supplies\Edit.cshtml" />
+    <Content Include="Views\SupplyFlowers\Index.cshtml" />
+    <Content Include="Views\SupplyFlowers\Info.cshtml" />
+    <Content Include="Views\SupplyFlowers\Create.cshtml" />
+    <Content Include="Views\SupplyFlowers\Edit.cshtml" />
+    <Content Include="Views\WarehouseFlowers\Index.cshtml" />
+    <Content Include="Views\WarehouseFlowers\Info.cshtml" />
+    <Content Include="Views\WarehouseFlowers\Create.cshtml" />
+    <Content Include="Views\WarehouseFlowers\Edit.cshtml" />
+    <Content Include="Views\Warehouses\Index.cshtml" />
+    <Content Include="Views\Warehouses\Info.cshtml" />
+    <Content Include="Views\Warehouses\Create.cshtml" />
+    <Content Include="Views\Warehouses\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\blob\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Home\" />
-    <Folder Include="Views\PlantationsFlowers\" />
-    <Folder Include="Views\Plantations\" />
-    <Folder Include="Views\Supplies\" />
-    <Folder Include="Views\SupplyFlowers\" />
-    <Folder Include="Views\WarehouseFlowers\" />
-    <Folder Include="Views\Warehouses\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

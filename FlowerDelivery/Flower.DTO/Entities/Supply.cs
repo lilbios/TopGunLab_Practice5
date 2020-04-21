@@ -16,13 +16,15 @@ namespace FlowerDelivery.DTO.Entities
 
         [Required]
         [DataType(DataType.DateTime)]
+        [Display(Name = "Sheduled date")]
         public DateTime ScheduledDate { get; set; }
 
         [DataType(DataType.DateTime)]
+        [Display(Name = "Closed date")]
         public DateTime ClosedDate { get; set; }
 
-        
-        [DefaultValue(Status.InPogress)]
+       
+        [Display(Name ="Supply status")]
         public Status Status { get; set; }
 
         public Guid PlantationId { get; set; }

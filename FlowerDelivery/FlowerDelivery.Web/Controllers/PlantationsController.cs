@@ -75,7 +75,7 @@ namespace FlowerDelivery.Web.Controllers
             {
                 await dataManager.Plantations.Update(plantation);
 
-                //return RedirectToAction("Details", n`ew { id = Plantation.Id });
+                //return RedirectToAction("Details", new { id = Plantation.Id });
             }
 
             return View(plantation);

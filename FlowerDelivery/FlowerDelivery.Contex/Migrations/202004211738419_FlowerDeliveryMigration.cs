@@ -16,7 +16,6 @@
                         Class = c.String(nullable: false),
                         Family = c.String(nullable: false),
                         ShortDescripton = c.String(nullable: false, maxLength: 100),
-                        Photo = c.String(),
                         Name = c.String(nullable: false, maxLength: 30),
                     })
                 .PrimaryKey(t => t.Id);

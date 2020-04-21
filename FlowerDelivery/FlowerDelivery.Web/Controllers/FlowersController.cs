@@ -47,7 +47,7 @@ namespace FlowerDelivery.Web.Controllers
             if (ModelState.IsValid)
             {
                 await dataManager.Flowers.Create(flower);
-                //return RedirectToAction("Details", new { id = flower.Id });
+                
             }
 
             return View();
