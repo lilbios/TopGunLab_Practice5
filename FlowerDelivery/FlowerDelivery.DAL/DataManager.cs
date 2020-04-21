@@ -8,9 +8,9 @@ namespace FlowerDelivery.DAL
         public IRepositoryPlantation Plantations { private set; get; }
         public IRepositorySupply Supplies { private set; get; }
         public IRepositoryWarehouse Warehouses { private set; get; }
-        public IRepositoryPlantationFlower RepositoryPlantationFlower { private set; get; }
-        public IRepositoryWarehouseFlower RepositoryWarehouseFlower { private set; get; }
-        public IRepositorySupplyFlower RepositorySupplyFlower { private set; get; }
+        public IRepositoryPlantationFlower PlantationFlowers { private set; get; }
+        public IRepositoryWarehouseFlower WarehouseFlowers { private set; get; }
+        public IRepositorySupplyFlower SupplyFlowers { private set; get; }
 
         public DataManager(IRepositoryFlower repositoryFlower, IRepositoryPlantation repositoryPlantation,
                 IRepositoryWarehouse repositoryWarehouse, IRepositorySupply repositorySupply,

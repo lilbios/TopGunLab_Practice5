@@ -1,8 +1,9 @@
 ﻿using FlowerDelivery.DAL;
-
+using FlowerDelivery.DTO.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -16,11 +17,79 @@ namespace FlowerDelivery.Web.Controllers
             dataManager = _dataManager;
         }
         // GET: Warehouses
-        public ActionResult Index()
+        [HttpGet]
+        public async Task<ActionResult> Index()
+        {
+            var models = await dataManager.Warehouses.GetAll();
+
+            return View(models);
+        }
+        [HttpGet]
+        public async Task<ActionResult> Info(Guid id)
+        {
+            var model = await dataManager.Warehouses.Get(id);
+
+            if (model == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(model);
+        }
+        [HttpGet]
+        public ActionResult Create()
         {
             return View();
         }
 
+        [HttpPost]
+
+        public async Task<ActionResult> Create(Warehouse warehouse)
+        {
+            if (ModelState.IsValid)
+            {
+                await dataManager.Warehouses.Create(warehouse);
+                //return RedirectToAction("Details", new { id = PlantationFlower.Id });
+            }
+
+            return View();
+        }
+        [HttpGet]
+        public async Task<ActionResult> Edit(Guid idWarehouse, Guid idFlower)
+        {
+            var model = await dataManager.Warehouses.Get(idWarehouse, idFlower);
+
+            if (model == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(model);
+        }
+
+        [HttpPost]
+
+        public async Task<ActionResult> Edit(Warehouse PlantationFlower)
+        {
+            if (ModelState.IsValid)
+            {
+                await dataManager.Warehouses.Update(PlantationFlower);
+
+                //return RedirectToAction("Details", new { id = PlantationFlower.Id });
+            }
+
+            return View(PlantationFlower);
+        }
+
+
+        [HttpPost]
+
+        public async Task<ActionResult> Delete(Guid id)
+        {
+            var model = await dataManager.Warehouses.Get(id);
+            await dataManager.Warehouses.Remove(model);
+            return RedirectToAction(nameof(WarehouseFlowersController.Index));
+        }
 
     }
 }

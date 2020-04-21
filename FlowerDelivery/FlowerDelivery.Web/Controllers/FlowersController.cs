@@ -19,16 +19,17 @@ namespace FlowerDelivery.Web.Controllers
         public async  Task<ActionResult> Index()
         {
             var models = await dataManager.Flowers.GetAll();
+
             return View(models);
         }
         [HttpGet]
-        public async Task<ActionResult> Details(Guid id)
+        public async Task<ActionResult> Info(Guid id)
         {
             var model = await dataManager.Flowers.Get(id);
 
             if (model == null)
             {
-                return View("NotFound");
+                return HttpNotFound();
             }
 
             return View(model);
@@ -40,13 +41,13 @@ namespace FlowerDelivery.Web.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        
         public async Task<ActionResult> Create(Flower flower)
         {
             if (ModelState.IsValid)
             {
                 await dataManager.Flowers.Create(flower);
-                return RedirectToAction("Details", new { id = flower.Id });
+                //return RedirectToAction("Details", new { id = flower.Id });
             }
 
             return View();
@@ -65,14 +66,14 @@ namespace FlowerDelivery.Web.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        
         public async Task<ActionResult> Edit(Flower flower)
         {
             if (ModelState.IsValid)
             {
                 await dataManager.Flowers.Update(flower);
 
-                return RedirectToAction("Details", new { id = flower.Id });
+                //return RedirectToAction("Details", n`ew { id = flower.Id });
             }
 
             return View(flower);
@@ -80,7 +81,7 @@ namespace FlowerDelivery.Web.Controllers
        
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        
         public async Task<ActionResult> Delete(Guid id)
         {
             var model = await dataManager.Flowers.Get(id);
