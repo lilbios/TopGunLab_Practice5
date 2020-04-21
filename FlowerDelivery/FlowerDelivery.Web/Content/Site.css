@@ -22,7 +22,10 @@ select,
 textarea {
     max-width: 280px;
 }
-a {
+a{
     font-family: 'Montserrat Subrayada', sans-serif;
     color:#000000;
+}
+.dropdown{
+    text-align:center;
 }

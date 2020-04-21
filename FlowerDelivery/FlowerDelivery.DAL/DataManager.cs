@@ -21,9 +21,9 @@ namespace FlowerDelivery.DAL
             Plantations = repositoryPlantation;
             Supplies = repositorySupply;
             Warehouses = repositoryWarehouse;
-            RepositoryPlantationFlower = repositoryPlantationFlower;
-            RepositoryWarehouseFlower = repositoryWarehouseFlower;
-            RepositorySupplyFlower = repositorySupplyFlower;
+            PlantationFlowers = repositoryPlantationFlower;
+            WarehouseFlowers = repositoryWarehouseFlower;
+            SupplyFlowers = repositorySupplyFlower;
 
         }
     }
