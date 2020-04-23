@@ -1,49 +1,42 @@
-﻿@model List<FlowerDelivery.DTO.Entities.Plantation>
-<div class="container">
+﻿@model FlowerDelivery.DTO.Entities.PlantationFlower
 
-    @if (Model.Count > 0)
-    {
-        foreach (var item in Model)
-        {
-            <div class="card mb-3 multi-content own-content">
-                <div class="row no-gutters">
-                    <div class="col-md-12">
-                        <div class="card-body">
-                            <p class="title">@item.Name</p>
-                            <hr>
-                            <div>
-                                <span class="event-info">@item.Adress</span>
-                            </div>
+@{
+    ViewBag.Title = "Create";
+}
 
-                            <div class="row">
-                                <div class="btn">
-                                    <a href="@Url.Action("Edit", "Flowers", new { id = @item.Id})" class="btn btn-primary">Edit</a>
-                                </div>
-                                <div class="btn">
-                                    <a href="@Url.Action("View", "Flowers", new { id = @item.Id })" class="btn btn-success">View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-1">
-                        <div class="btn">
-                            @using (Html.BeginForm("Delete", "Flowers", new { id = @item.Id }))
-                            {
-                                <div class="row">
-                                    <input type="submit" class="btn btn-danger" data-toggle="modal" value="🗑" data-target="#exampleModal">
-                                </div>
-                            }
-                        </div>
-                    </div>
-                </div>
+<h2>Create</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>PlantationFlower</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
             </div>
-        }
-    }
-    else
-    {
-        <div class="empty" align="center">
-            <p>There is nothing for you :(</p>
         </div>
 
-    }
+        <div class="form-group">
+            @Html.LabelFor(model => model.Info, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Info, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Info, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
 </div>

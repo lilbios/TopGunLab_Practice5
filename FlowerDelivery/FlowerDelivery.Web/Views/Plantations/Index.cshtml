@@ -1,4 +1,5 @@
-﻿@model List<FlowerDelivery.DTO.Entities.Warehouse>
+﻿@model List<FlowerDelivery.DTO.Entities.Plantation>
+
 <div class="container">
 
     @if (Model.Count > 0)
@@ -9,21 +10,25 @@
                 <div class="row no-gutters">
                     <div class="col-md-12">
                         <div class="card-body">
-                            <p class="title">@item.Name</p>
-                            <hr>
-                            <div>
-                                <span class="event-info">@item.Adress</span>
-                            </div>
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayName(item.Name)
+                                </dt>
+
+                                <dt>
+                                    @Html.DisplayName(item.Adress)
+                                </dt>
+                            </dl>
 
                             <div class="row">
                                 <div class="btn">
-                                    <a href="@Url.Action("Edit", "Warehouses", new { id = @item.Id})" class="btn btn-primary">Edit</a>
+                                    <a href="@Url.Action("Edit", "Plantations", new { id = @item.Id})" class="btn btn-primary">Edit</a>
                                 </div>
                                 <div class="btn">
-                                    <a href="@Url.Action("Info", "Warehouses", new { id = @item.Id })" class="btn btn-success">View</a>
+                                    <a href="@Url.Action("Info", "Plantations", new { id = @item.Id })" class="btn btn-success">View</a>
                                 </div>
                                 <div class="btn">
-                                    @using (Html.BeginForm("Delete", "Warehouses", new { id = @item.Id }))
+                                    @using (Html.BeginForm("Delete", "Plantations", new { id = @item.Id }))
                                     {
                                         <div class="row">
                                             <input type="submit" class="btn btn-danger" data-toggle="modal" value="🗑" data-target="#exampleModal">

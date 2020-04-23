@@ -49,15 +49,15 @@ namespace FlowerDelivery.Web.Controllers
             if (ModelState.IsValid)
             {
                 await dataManager.Warehouses.Create(warehouse);
-                //return RedirectToAction("Details", new { id = PlantationFlower.Id });
+                return RedirectToAction(nameof(WarehouseFlowersController.Index));
             }
 
             return View();
         }
         [HttpGet]
-        public async Task<ActionResult> Edit(Guid idWarehouse, Guid idFlower)
+        public async Task<ActionResult> Edit(Guid id)
         {
-            var model = await dataManager.Warehouses.Get(idWarehouse, idFlower);
+            var model = await dataManager.Warehouses.Get(id);
 
             if (model == null)
             {
@@ -75,7 +75,7 @@ namespace FlowerDelivery.Web.Controllers
             {
                 await dataManager.Warehouses.Update(PlantationFlower);
 
-                //return RedirectToAction("Details", new { id = PlantationFlower.Id });
+                return RedirectToAction(nameof(WarehouseFlowersController.Index));
             }
 
             return View(PlantationFlower);

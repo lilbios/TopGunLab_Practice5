@@ -49,7 +49,7 @@ namespace FlowerDelivery.Web.Controllers
             if (ModelState.IsValid)
             {
                 await dataManager.PlantationFlowers.Create(plantationFlower);
-                //return RedirectToAction("Details", new { id = PlantationFlower.Id });
+                return RedirectToAction(nameof(PlantationFlowersController.Index));
             }
 
             return View();
@@ -75,7 +75,7 @@ namespace FlowerDelivery.Web.Controllers
             {
                 await dataManager.PlantationFlowers.Update(PlantationFlower);
 
-                //return RedirectToAction("Details", new { id = PlantationFlower.Id });
+                return RedirectToAction(nameof(PlantationFlowersController.Index));
             }
 
             return View(PlantationFlower);

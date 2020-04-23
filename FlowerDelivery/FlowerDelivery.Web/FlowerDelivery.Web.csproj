@@ -194,7 +194,6 @@
     <Content Include="Views\Plantations\Edit.cshtml" />
     <Content Include="Views\PlantationFlowers\Index.cshtml" />
     <Content Include="Views\PlantationFlowers\Info.cshtml" />
-    <Content Include="Views\PlantationFlowers\Create.cshtml" />
     <Content Include="Views\PlantationFlowers\Edit.cshtml" />
     <Content Include="Views\Supplies\Index.cshtml" />
     <Content Include="Views\Supplies\Create.cshtml" />
@@ -211,6 +210,11 @@
     <Content Include="Views\Warehouses\Create.cshtml" />
     <Content Include="Views\Warehouses\Edit.cshtml" />
     <Content Include="Views\Flowers\Info.cshtml" />
+    <Content Include="Views\Plantations\Info.cshtml" />
+    <Content Include="Views\Supplies\Info.cshtml" />
+    <Content Include="Views\Warehouses\Info.cshtml" />
+    <Content Include="Views\PlantationFlowers\Create.cshtml" />
+    <Content Include="Views\Plantations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

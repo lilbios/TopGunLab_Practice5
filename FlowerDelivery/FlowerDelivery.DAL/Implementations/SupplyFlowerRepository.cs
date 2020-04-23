@@ -24,8 +24,10 @@ namespace FlowerDelivery.DAL.Implementations
 
         public async Task<SupplyFlower> Get(params Guid[] identity)
         {
+            var sId = identity[0];
+            var fId = identity[1];
             var supplyFlower = await dbcontext.SupplyFlowers
-                .FirstOrDefaultAsync(sf=> sf.SupplyId == identity[0] && sf.SupplyId == identity[1]);
+                .FirstOrDefaultAsync(sf=> sf.SupplyId == sId && sf.FlowerId == fId);
             return supplyFlower;
         }
 

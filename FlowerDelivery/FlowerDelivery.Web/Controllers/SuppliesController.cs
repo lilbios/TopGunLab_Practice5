@@ -37,19 +37,30 @@ namespace FlowerDelivery.Web.Controllers
             return View(model);
         }
         [HttpGet]
-        public ActionResult Create()
+        public async Task<ActionResult> Create()
         {
+            var plantations = await dataManager.Plantations.GetAll();
+            var warehouses = await dataManager.Warehouses.GetAll();
+
+            ViewBag.Plantations = new SelectList(plantations,"Id","Name");
+            ViewBag.Warehouses = new SelectList(warehouses, "Id", "Name");
+            
             return View();
         }
 
         [HttpPost]
 
-        public async Task<ActionResult> Create(Supply Supply)
+        public async Task<ActionResult> Create(FormCollection formCollection)
         {
             if (ModelState.IsValid)
             {
-                await dataManager.Supplies.Create(Supply);
-                //return RedirectToAction("Details", new { id = Supply.Id });
+                foreach (string key in formCollection.AllKeys)
+                {
+
+                    var res = formCollection[key];
+                }
+                await dataManager.Supplies.Create(null);
+                return RedirectToAction(nameof(SuppliesController.Index));
             }
 
             return View();
@@ -75,7 +86,7 @@ namespace FlowerDelivery.Web.Controllers
             {
                 await dataManager.Supplies.Update(supply);
 
-                //return RedirectToAction("Details", n`ew { id = Supply.Id });
+                return RedirectToAction(nameof(SuppliesController.Index));
             }
 
             return View(supply);
