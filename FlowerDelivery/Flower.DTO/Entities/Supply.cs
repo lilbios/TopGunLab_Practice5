@@ -7,13 +7,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FlowerDelivery.DTO.Entities
 {
-    public class Supply
+    public class Supply:Entity
     {
-        [Key]
-        [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
-
+  
         [Required]
         [DataType(DataType.DateTime)]
         [Display(Name = "Sheduled date")]

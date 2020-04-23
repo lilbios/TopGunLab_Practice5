@@ -17,7 +17,7 @@ namespace FlowerDelivery.Web.Controllers
         }
         // GET: Flowers
         [HttpGet]
-        public async  Task<ActionResult> Index()
+        public async Task<ActionResult> Index()
         {
             var models = await dataManager.Flowers.GetAll();
 
@@ -42,16 +42,17 @@ namespace FlowerDelivery.Web.Controllers
         }
 
         [HttpPost]
-        
+
         public async Task<ActionResult> Create(Flower flower)
         {
             if (ModelState.IsValid)
             {
                 await dataManager.Flowers.Create(flower);
-                
+                return RedirectToAction(nameof(FlowersController.Index));
+
             }
 
-            return RedirectToAction(nameof(FlowersController.Index));
+            return View();
         }
         [HttpGet]
         public async Task<ActionResult> Edit(Guid id)
@@ -67,7 +68,7 @@ namespace FlowerDelivery.Web.Controllers
         }
 
         [HttpPost]
-        
+
         public async Task<ActionResult> Edit(Flower flower)
         {
             if (ModelState.IsValid)
@@ -79,10 +80,10 @@ namespace FlowerDelivery.Web.Controllers
 
             return View(flower);
         }
-       
+
 
         [HttpPost]
-        
+
         public async Task<ActionResult> Delete(Guid id)
         {
             var model = await dataManager.Flowers.Get(id);

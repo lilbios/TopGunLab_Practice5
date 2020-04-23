@@ -9,40 +9,56 @@
 <div>
     <h4>Supply</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ScheduledDate)
-        </dt>
+    <div class="col-sm-8">
+        <dl class="dl-horizontal">
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ScheduledDate)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ScheduledDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ScheduledDate)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ClosedDate)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ClosedDate)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ClosedDate)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ClosedDate)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PlantationId)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.PlantationId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PlantationId)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.PlantationId)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.WarehouseId)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.WarehouseId)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.WarehouseId)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.WarehouseId)
+            </dd>
 
-    </dl>
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+
+        </dl>
+    </div>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |

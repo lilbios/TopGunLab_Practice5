@@ -55,6 +55,7 @@
                         Status = c.Int(nullable: false),
                         PlantationId = c.Guid(nullable: false),
                         WarehouseId = c.Guid(nullable: false),
+                        Name = c.String(nullable: false, maxLength: 30),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Plantations", t => t.PlantationId, cascadeDelete: true)

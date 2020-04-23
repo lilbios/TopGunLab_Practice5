@@ -50,16 +50,12 @@ namespace FlowerDelivery.Web.Controllers
 
         [HttpPost]
 
-        public async Task<ActionResult> Create(FormCollection formCollection)
+        public async Task<ActionResult> Create(FormCollection supply)
         {
             if (ModelState.IsValid)
             {
-                foreach (string key in formCollection.AllKeys)
-                {
-
-                    var res = formCollection[key];
-                }
-                await dataManager.Supplies.Create(null);
+               
+                await dataManager.Supplies.Create(supply);
                 return RedirectToAction(nameof(SuppliesController.Index));
             }
 

@@ -37,8 +37,12 @@ namespace FlowerDelivery.Web.Controllers
             return View(model);
         }
         [HttpGet]
-        public ActionResult Create()
+        public async Task<ActionResult> Create()
         {
+            var plantations = await dataManager.Plantations.GetAll();
+            var flowers = await dataManager.Flowers.GetAll();
+            ViewBag.Plantations = new SelectList(plantations, "Id", "Name");
+            ViewBag.Flowers = new SelectList(flowers, "Id", "Name");
             return View();
         }
 

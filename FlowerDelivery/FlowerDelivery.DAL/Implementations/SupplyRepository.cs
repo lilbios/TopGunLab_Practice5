@@ -18,6 +18,7 @@ namespace FlowerDelivery.DAL.Implementations
         }
         public async Task Create(Supply value)
         {
+            
             dbcontext.Supplies.Add(value);
             await dbcontext.SaveChangesAsync();
         }
