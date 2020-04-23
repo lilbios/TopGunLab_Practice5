@@ -50,7 +50,7 @@ namespace FlowerDelivery.Web.Controllers
                 
             }
 
-            return View();
+            return RedirectToAction(nameof(FlowersController.Index));
         }
         [HttpGet]
         public async Task<ActionResult> Edit(Guid id)
@@ -73,7 +73,7 @@ namespace FlowerDelivery.Web.Controllers
             {
                 await dataManager.Flowers.Update(flower);
 
-                //return RedirectToAction("Details", n`ew { id = flower.Id });
+                return RedirectToAction(nameof(FlowersController.Index));
             }
 
             return View(flower);

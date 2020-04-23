@@ -8,6 +8,7 @@
     <!--Text-->
     <!-- Headers-->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -32,13 +33,34 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Others
                         </a>
-                        <div class="dropdown-menu"  aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item " href="@Url.Action("Index","PlantationFlowers")">Plantation flowers</a>
                             <hr />
                             <a class="dropdown-item" href="@Url.Action("Index","WarehouseFlowers")">Warehouse flowers</a>
                             <hr />
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="@Url.Action("Index","SupplyFlowers")">Flower supplies</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Creation
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item " href="@Url.Action("Create","Flowers")">Flower</a>
+                            <hr />
+                            <a class="dropdown-item " href="@Url.Action("Create","Plantations")">Plantation </a>
+                            <hr />
+                            <a class="dropdown-item " href="@Url.Action("Create","Warehouses")">Warehouse</a>
+                            <hr />
+                            <a class="dropdown-item " href="@Url.Action("Create","Supplies")">Supply</a>
+                            <hr />
+                            <a class="dropdown-item " href="@Url.Action("Create","PlantationFlowers")">Plantation flowers</a>
+                            <hr />
+                            <a class="dropdown-item" href="@Url.Action("Create","WarehouseFlowers")">Warehouse flowers</a>
+                            <hr />
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="@Url.Action("Create","SupplyFlowers")">Flower supplies</a>
                         </div>
                     </li>
                 </ul>

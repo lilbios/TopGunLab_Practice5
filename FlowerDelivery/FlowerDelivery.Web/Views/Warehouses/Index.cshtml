@@ -1,8 +1,49 @@
-﻿@model FlowerDelivery.DTO.Entities.Warehouse
+﻿@model List<FlowerDelivery.DTO.Entities.Warehouse>
+<div class="container">
 
-@{
-    ViewBag.Title = "Index";
-}
+    @if (Model.Count > 0)
+    {
+        foreach (var item in Model)
+        {
+            <div class="card mb-3 multi-content own-content">
+                <div class="row no-gutters">
+                    <div class="col-md-12">
+                        <div class="card-body">
+                            <p class="title">@item.Name</p>
+                            <hr>
+                            <div>
+                                <span class="event-info">@item.Adress</span>
+                            </div>
 
-<h2>Index</h2>
+                            <div class="row">
+                                <div class="btn">
+                                    <a href="@Url.Action("Edit", "Warehouses", new { id = @item.Id})" class="btn btn-primary">Edit</a>
+                                </div>
+                                <div class="btn">
+                                    <a href="@Url.Action("View", "Warehouses", new { id = @item.Id })" class="btn btn-success">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="btn">
+                            @using (Html.BeginForm("Delete", "Warehouses", new { id = @item.Id }))
+                            {
+                                <div class="row">
+                                    <input type="submit" class="btn btn-danger" data-toggle="modal" value="🗑" data-target="#exampleModal">
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="empty" align="center">
+            <p>There is nothing for you :(</p>
+        </div>
 
+    }
+</div>

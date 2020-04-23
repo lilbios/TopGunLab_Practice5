@@ -29,3 +29,23 @@ a{
 .dropdown{
     text-align:center;
 }
+.btn {
+    display: inline-block;
+    align-content: center;
+}
+
+textarea {
+    min-height: 100px;
+    max-height: 100px;
+    max-width: 400px;
+    min-width: 400px;
+    outline: none;
+    border-color: darkgray;
+}
+
+.title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 10px;
+}
