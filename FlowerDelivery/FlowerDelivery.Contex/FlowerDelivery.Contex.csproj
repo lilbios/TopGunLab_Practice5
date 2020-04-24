@@ -59,9 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FlowerDeliveryDbContext.cs" />
-    <Compile Include="Migrations\202004231653101_FlowerDeliveryMigration.cs" />
-    <Compile Include="Migrations\202004231653101_FlowerDeliveryMigration.designer.cs">
-      <DependentUpon>202004231653101_FlowerDeliveryMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202004240001296_Migration.cs" />
+    <Compile Include="Migrations\202004240001296_Migration.designer.cs">
+      <DependentUpon>202004240001296_Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,8 +77,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202004231653101_FlowerDeliveryMigration.resx">
-      <DependentUpon>202004231653101_FlowerDeliveryMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202004240001296_Migration.resx">
+      <DependentUpon>202004240001296_Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

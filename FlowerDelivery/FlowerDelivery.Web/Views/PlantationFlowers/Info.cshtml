@@ -6,3 +6,46 @@
 
 <h2>Info</h2>
 
+<div>
+    <h4>Flower</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Flower)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Flower.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Plantation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plantation.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Info)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Info)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { idPlantation = Model.PlantationId,idFlower = Model.FlowerId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

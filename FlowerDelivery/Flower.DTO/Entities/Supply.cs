@@ -12,12 +12,12 @@ namespace FlowerDelivery.DTO.Entities
   
         [Required]
         [DataType(DataType.DateTime)]
-        [Display(Name = "Sheduled date")]
-        public DateTime ScheduledDate { get; set; }
+  
+        public string ScheduledDate { get; set; }
 
-        [DataType(DataType.DateTime)]
+      
         [Display(Name = "Closed date")]
-        public DateTime ClosedDate { get; set; }
+        public string ClosedDate { get; set; }
 
        
         [Display(Name ="Supply status")]

@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class FlowerDeliveryMigration : DbMigration
+    public partial class Migration : DbMigration
     {
         public override void Up()
         {
@@ -50,8 +50,8 @@
                 c => new
                     {
                         Id = c.Guid(nullable: false, identity: true),
-                        ScheduledDate = c.DateTime(nullable: false),
-                        ClosedDate = c.DateTime(nullable: false),
+                        ScheduledDate = c.String(nullable: false),
+                        ClosedDate = c.String(),
                         Status = c.Int(nullable: false),
                         PlantationId = c.Guid(nullable: false),
                         WarehouseId = c.Guid(nullable: false),

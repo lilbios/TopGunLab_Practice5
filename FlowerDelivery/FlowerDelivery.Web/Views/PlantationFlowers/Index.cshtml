@@ -1,8 +1,56 @@
 ﻿@model List<FlowerDelivery.DTO.Entities.PlantationFlower>
 
-@{
-    ViewBag.Title = "Index";
-}
+    <div class="container">
 
-<h2>Index</h2>
+        @if (Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+                <div class="card mb-3 multi-content own-content">
+                    <div class="row no-gutters">
+                        <div class="col-md-12">
+                            <div class="card-body">
+                                <p class="title"> Flower name: @item.Flower.Name</p>
+                                <hr>
 
+                                <div>
+                                    <span class="event-info">Plantation:@item.Plantation.Name</span>
+                                </div>
+                                <div>
+                                    <span class="event-info">Amount on plantation: @item.Amount</span>
+                                </div>
+                                <div>
+                                    <span class="event-info">Information: @item.Info</span>
+                                </div>
+                                <div class="row">
+                                    <div class="btn">
+                                        <a href="@Url.Action("Edit", "PlantationFlowers", new { idPlantation = @item.Plantation,idFlower = @item.FlowerId })" class="btn btn-primary">Edit</a>
+                                    </div>
+                                    <div class="btn">
+                                        <a href="@Url.Action("Info", "PlantationFlowers", new { idPlantation = @item.Plantation,idFlower = @item.FlowerId })" class="btn btn-success">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="btn">
+                                @using (Html.BeginForm("Delete", "PlantationFlowers", new { idPlantation = @item.Plantation, idFlower = @item.FlowerId }))
+                                {
+                                    <div class="row">
+                                        <input type="submit" class="btn btn-danger" data-toggle="modal" value="🗑" data-target="#exampleModal">
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="empty" align="center">
+                <p>There is nothing for you :(</p>
+            </div>
+
+        }
+    </div>

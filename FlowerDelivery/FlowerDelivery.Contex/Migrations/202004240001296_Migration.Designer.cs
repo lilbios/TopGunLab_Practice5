@@ -7,13 +7,13 @@ namespace FlowerDelivery.Contex.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class FlowerDeliveryMigration : IMigrationMetadata
+    public sealed partial class Migration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(FlowerDeliveryMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Migration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202004231653101_FlowerDeliveryMigration"; }
+            get { return "202004240001296_Migration"; }
         }
         
         string IMigrationMetadata.Source

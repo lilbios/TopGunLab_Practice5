@@ -52,14 +52,21 @@ namespace FlowerDelivery.Web.Controllers
 
         public async Task<ActionResult> Create(FormCollection supply)
         {
-            if (ModelState.IsValid)
-            {
-               
-                await dataManager.Supplies.Create(supply);
-                return RedirectToAction(nameof(SuppliesController.Index));
-            }
 
-            return View();
+            var newSupply = new Supply()
+            {
+                Name = supply["Name"],
+                ScheduledDate = supply["ScheduledDate"],
+                ClosedDate = supply["ClosedDate"],
+                WarehouseId =  new Guid(supply["Warehouse"]),
+                PlantationId = new Guid(supply["Plantation"])
+            };
+           
+                await dataManager.Supplies.Create(newSupply);
+                return RedirectToAction(nameof(SuppliesController.Index));
+            
+
+            
         }
         [HttpGet]
         public async Task<ActionResult> Edit(Guid id)

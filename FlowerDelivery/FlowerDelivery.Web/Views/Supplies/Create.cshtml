@@ -17,14 +17,14 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Name, new { name = "Name", htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.ScheduledDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ScheduledDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.ScheduledDate, new { name = "ScheduledDate", htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ScheduledDate, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -32,7 +32,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ClosedDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ClosedDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.ClosedDate, new { name = "ClosedDate", htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ClosedDate, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -40,7 +40,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PlantationId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.Plantation, (IEnumerable<SelectListItem>)ViewBag.Plantations)
+                @Html.DropDownListFor(model => model.Plantation, (IEnumerable<SelectListItem>)ViewBag.Plantations, new { name = "Plantation" })
                 @Html.ValidationMessageFor(model => model.PlantationId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -48,7 +48,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.WarehouseId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.Warehouse, (IEnumerable<SelectListItem>)ViewBag.Warehouses)
+                @Html.DropDownListFor(model => model.Warehouse, (IEnumerable<SelectListItem>)ViewBag.Warehouses, new { name = "Warehouse" })
                 @Html.ValidationMessageFor(model => model.WarehouseId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -59,28 +59,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-4">
-        <div class="form-group block">
-            <fieldset>
-                <legend>Supply status</legend>
-                <div class="flex-colum">
-                    @Html.RadioButtonFor(model => model.Status, "InProgress")
-                    <small>In progress</small>
-                    <br />
-                    @Html.RadioButtonFor(model => model.Status, "Canceled")
-                    <small>Canceled</small>
-                    <br />
-                    @Html.RadioButtonFor(model => model.Status, "Closed")
-                    <small>Closed</small>
-                    <br />
-                    <small class="danger">
-                        @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
-                    </small>
-                </div>
-            </fieldset>
 
-        </div>
-    </div>
 }
 <div>
     @Html.ActionLink("Back to List", "Index")

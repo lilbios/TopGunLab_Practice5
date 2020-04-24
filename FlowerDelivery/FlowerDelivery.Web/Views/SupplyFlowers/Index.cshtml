@@ -4,5 +4,57 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="container">
 
+    @if (Model.Count > 0)
+    {
+        foreach (var item in Model)
+        {
+            <div class="card mb-3 multi-content own-content">
+                <div class="row no-gutters">
+                    <div class="col-md-12">
+                        <div class="card-body">
+                            <p class="title"> Supply name: @item.Supply.Name</p>
+                            <hr>
+
+                            <div>
+                                <span class="event-info">Flower: @item.Flower.Name</span>
+                            </div>
+                            <div>
+                                <span class="event-info">Amount in supply: @item.Amount</span>
+                            </div>
+                            <div>
+                                <span class="event-info">Information: @item.Info</span>
+                            </div>
+                            <div class="row">
+                                <div class="btn">
+                                    <a href="@Url.Action("Edit", "SupplyFlowers", new { idPlantation = @item.SupplyId,idFlower = @item.FlowerId })" class="btn btn-primary">Edit</a>
+                                </div>
+                                <div class="btn">
+                                    <a href="@Url.Action("Info", "SupplyFlowers", new { idPlantation = @item.SupplyId,idFlower = @item.FlowerId })" class="btn btn-success">View</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="btn">
+                            @using (Html.BeginForm("Delete", "SupplyFlowers", new { idPlantation = @item.SupplyId, idFlower = @item.FlowerId }))
+                            {
+                                <div class="row">
+                                    <input type="submit" class="btn btn-danger" data-toggle="modal" value="🗑" data-target="#exampleModal">
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="empty" align="center">
+            <p>There is nothing for you :(</p>
+        </div>
+
+    }
+</div>
